@@ -1,15 +1,21 @@
 import React from "react";
-
+import people from "../assets/undraw_grades_re_j7d6.svg"
 const Population = () => {
   return (
     <>
-      <div className="h-screen flex justify-center flex-col pt-40">
-        <div className="card-body text-center gap-0 leading-3">
-          <p className="text-5xl font-bold">Current Population of Bangladesh</p>
-          <p className="text-3xl font-semibold">4545654654645</p>
-          <hr />
-          <p className="text-3xl font-bold">Died</p>
-          
+      <div className="h-screen flex justify-center items-center">
+        <div className="card w-96 bg-base-100 shadow-2xl">
+          <figure>
+            <img src={people} alt="" />
+          </figure>
+          <div className="card-body text-center text-2xl ">
+            <p className="font-bold">Total Population (BD)</p>
+            <p className="font-bold">543,534,534</p>
+            <hr />
+            <p className="font-bold">Died</p>
+            <p className="font-bold">6,456,456</p>
+            <hr />
+          </div>
         </div>
       </div>
     </>

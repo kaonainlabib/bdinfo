@@ -1,12 +1,12 @@
 import React from "react";
-import image from "../assets/Fresh Folk - Standing.png";
+import image from "../assets/Fresh_Folk_-_Standing-removebg-preview.png";
 import cloudy from "../assets/icons8-cloud-80.png";
 import corona from "../assets/icons8-coronavirus-96.png";
 const Home = () => {
   return (
     <>
       <div className="flex justify-around pt-20 px-20">
-        <img className="bg-current" src={image} alt="" />
+        <img className="bg-transparent" src={image} alt="" />
         <div className="max-w-xl pt-20">
           <div className="text-4xl">
             Get instant updates about{" "}
@@ -22,7 +22,12 @@ const Home = () => {
           </figure>
           <div className="card-body text-center text-2xl ">
             <p className="font-bold">24&deg;</p>
-            <p>Sunny</p>
+            <hr />
+            <p className="font-bold">Sunny</p>
+            <hr />
+            <p className="font-bold">Last Updated</p>
+            <p className="font-bold">00:00:00 AM</p>
+            <hr />
           </div>
         </div>
       </div>
@@ -40,6 +45,9 @@ const Home = () => {
             <hr />
             <p className="font-bold">Died</p>
             <p className="font-bold">456,546,546</p>
+            <hr />
+            <p className="font-bold">Last Updated</p>
+            <p className="font-bold">00:00:00 AM</p>
             <hr />
           </div>
         </div>
