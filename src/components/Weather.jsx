@@ -11,7 +11,7 @@ const Weather = () => {
           <div className="card-body text-center text-2xl ">
             <p className="font-bold">Today's Weather</p>
             <hr />
-            <p className="font-bold">34&deg;</p>
+            <p className="font-bold">34&deg; Cloudy</p>
             <hr />
             <p className="font-bold">Last Updated</p>
             <p className="font-bold">00:00:00 AM</p>

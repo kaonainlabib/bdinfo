@@ -5,8 +5,8 @@ import corona from "../assets/icons8-coronavirus-96.png";
 const Home = () => {
   return (
     <>
-      <div className="flex justify-around pt-20 px-20">
-        <img className="bg-transparent" src={image} alt="" />
+      <div id="home" className="flex justify-around pt-40 px-20">
+        <img id="top" className="bg-transparent" src={image} alt="" />
         <div className="max-w-xl pt-20">
           <div className="text-4xl">
             Get instant updates about{" "}
@@ -15,7 +15,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="h-[80vh] flex justify-center items-center">
+      <div className="h-[80vh] flex justify-center items-center ">
         <div className="card w-96 bg-base-100 shadow-2xl">
           <figure>
             <img src={cloudy} alt="" />

@@ -21,9 +21,9 @@ root.render(
         <Route path="/weather" element={<Weather />} />
         <Route path="/population" element={<Population />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
     {/* <Home /> */}
-    <Footer />
   </React.StrictMode>
 );
 reportWebVitals();
