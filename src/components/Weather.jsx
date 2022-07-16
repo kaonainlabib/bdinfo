@@ -10,13 +10,14 @@ const Weather = () => {
     )
       .then((res) => res.json())
       .then((data) => setWeatherData(data));
-    console.log(weatherData)
+    console.log(weatherData);
   };
-  const Fdo = () => {fetchData(input);
-   }
+  const Fdo = () => {
+    fetchData(input);
+  };
   return (
     <>
-      <div className="h-screen flex justify-center items-center flex-col gap-5">
+      <div className="h-screen flex justify-center items-center pt-20 flex-col gap-5">
         <div className="flex" onDragEnter={Fdo}>
           <input
             type="text"
@@ -24,26 +25,36 @@ const Weather = () => {
             className="text-right input input-bordered input-accent w-full max-w-xs"
             onChange={(event) => setInput(event.target.value)}
           />
-          <AiOutlineSearch
-            className="absolute  text-5xl text-gray-600 fill-current cursor-pointer"
-            onClick={Fdo}
-          />
+          <button className="absolute text-5xl text-gray-600" type="submit" onClick={Fdo}>
+            <AiOutlineSearch className=" fill-current cursor-pointer" />
+          </button>
         </div>
 
-        {weatherData?.cod === 200 && weatherData?.sys?.country === "BD" ?(<div className="card w-96 bg-base-100 shadow-2xl">
-          <figure>
-            <img className="h-[10rem]" src={weather} alt="" />
-          </figure>
-          <div className="card-body text-center text-2xl ">
-            <p className="font-bold">Today's Weather</p>
-            <hr />
-            <p className="font-bold">{(parseInt(weatherData?.main.temp) - 273.15).toFixed(2)}&deg; {weatherData?.weather[0]?.main}</p>
-            <hr />
-            <p className="font-bold">Last Updated</p>
-            <p className="font-bold">{new Date().toLocaleTimeString()}</p>
-            <hr />
+        {weatherData?.cod === 200 && weatherData?.sys?.country === "BD" ? (
+          <div className="card w-96 bg-base-100 shadow-2xl">
+            <figure>
+              <img className="h-[10rem]" src={weather} alt="" />
+            </figure>
+            <div className="card-body text-center text-2xl ">
+              <p className="font-bold">
+                Today's Weather <br />({weatherData?.name})
+              </p>
+              <hr />
+              <p className="font-bold">
+                {(parseInt(weatherData?.main.temp) - 273.15).toFixed(2)}&deg;{" "}
+                {weatherData?.weather[0]?.main}
+              </p>
+              <hr />
+              <p className="font-bold">Last Updated</p>
+              <p className="font-bold">{new Date().toLocaleTimeString()}</p>
+              <hr />
+            </div>
           </div>
-        </div>) : ((navigator.onLine ? <>Not found</> : <>No internet connection</>))}
+        ) : navigator.onLine ? (
+          <>Not found</>
+        ) : (
+          <>No internet connection</>
+        )}
       </div>
     </>
   );
