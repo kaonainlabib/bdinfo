@@ -5,17 +5,17 @@ function Mouse() {
   return (
     <>
         <div
-          className="fixed w-20 h-20 bg-green-400 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-10"
+          className="fixed w-16 h-16 bg-slate-400 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-10"
           style={{ top: `${JSON.stringify(mousePosition?.y)}px`,
            left: `${JSON.stringify(mousePosition?.x)}px` }}
         ></div>
       <div
-        className="fixed w-16 h-16 bg-green-400 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-50"
+        className="fixed w-10 h-10 bg-stone-600 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-25"
         style={{ top: `${JSON.stringify(mousePosition?.y)}px`,
         left: `${JSON.stringify(mousePosition?.x)}px` }}
       ></div>
         <div
-          className="fixed w-10 h-10 bg-green-400 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-25"
+          className="fixed w-5 h-5 bg-slate-700 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-50"
           style={{ top: `${JSON.stringify(mousePosition?.y)}px`,
            left: `${JSON.stringify(mousePosition?.x)}px` }}
         ></div>

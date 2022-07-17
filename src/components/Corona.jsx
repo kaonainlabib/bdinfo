@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import corona from "../assets/coronavirus.png";
 import socialDistancing from "../assets/social-distancing.png";
 import { TiTick } from "react-icons/ti";
 const Corona = () => {
+  const [Corona, setCorona] = useState(null);
+  const pleaseFetch = () => {
+    fetch(
+      "https://worldometers.p.rapidapi.com/api/coronavirus/country/Bangladesh",
+      {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "0ab0c004d4mshe4c411ed6e0d733p15ee16jsndcb4a5fcffe1",
+          "X-RapidAPI-Host": "worldometers.p.rapidapi.com",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((coronaData) => setCorona(coronaData));
+  };
+  useEffect(() => {
+    pleaseFetch();
+  }, []);
   return (
     <>
       <div className="h-screen flex justify-center items-center pt-60">
@@ -11,17 +30,17 @@ const Corona = () => {
             <img className="h-[7rem]" src={corona} alt="" />
           </figure>
           <div className="card-body text-center text-2xl ">
-            <p className="font-bold">Total Test cases</p>
-            <p className="font-bold">543,534,534</p>
+            <p className="font-bold">Total cases (BD)</p>
+            <p className="font-bold">{Corona?.data["Total Cases"]}</p>
             <hr />
             <p className="font-bold">Recovered</p>
-            <p className="font-bold">6,456,456</p>
+            <p className="font-bold">{Corona?.data["Total Recovered"]}</p>
             <hr />
             <p className="font-bold">Died</p>
-            <p className="font-bold">456,546,546</p>
+            <p className="font-bold">{Corona?.data["Total Deaths"]}</p>
             <hr />
             <p className="font-bold">Last Updated</p>
-            <p className="font-bold">00:00:00 AM</p>
+            <p className="font-bold">{Corona?.last_update}</p>
             <hr />
           </div>
         </div>
@@ -52,7 +71,11 @@ const Corona = () => {
             </ul>
           </div>
           <div className="flex justify-center pb-20 sm:pb-0">
-            <img className="h-60 w-60 sm:h-40 md:h-60" src={socialDistancing} alt="" />
+            <img
+              className="h-60 w-60 sm:h-40 md:h-60"
+              src={socialDistancing}
+              alt=""
+            />
           </div>
         </div>
       </div>

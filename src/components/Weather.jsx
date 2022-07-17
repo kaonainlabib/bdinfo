@@ -16,18 +16,16 @@ const Weather = () => {
     fetchData(input);
   };
   return (
-    <>
-      <div className="h-screen flex justify-center items-center pt-20 flex-col gap-5">
-        <div className="flex" onDragEnter={Fdo}>
+    <>  
+      <div className="h-screen flex justify-center items-center pt-20 flex-col gap-5 z-10">
+        <div className="flex z-10">
           <input
             type="text"
             placeholder="Type here"
             className="text-right input input-bordered input-accent w-full max-w-xs"
             onChange={(event) => setInput(event.target.value)}
           />
-          <button className="absolute text-5xl text-gray-600" type="submit" onClick={Fdo}>
-            <AiOutlineSearch className=" fill-current cursor-pointer" />
-          </button>
+            <AiOutlineSearch className="absolute text-5xl text-gray-600 fill-current cursor-pointer" onClick={Fdo}/>
         </div>
 
         {weatherData?.cod === 200 && weatherData?.sys?.country === "BD" ? (

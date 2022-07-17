@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <div
         id="nav"
-        className=" navbar bg-base-100 fixed let-0 right-0 z-10 shadow-md"
+        className=" navbar bg-base-100 fixed let-0 right-0 z-30 shadow-md"
       >
         <div className="flex-1">
           <NavLink className="btn btn-ghost normal-case text-xl" to="/">
