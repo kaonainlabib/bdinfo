@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import image from "../assets/Fresh_Folk_-_Standing-removebg-preview.png";
-import cloudy from "../assets/icons8-cloud-80.png";
 import corona from "../assets/icons8-coronavirus-96.png";
 import weather from "../assets/undraw_weather_app_re_kcb1.svg";
 
