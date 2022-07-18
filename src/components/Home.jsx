@@ -43,7 +43,7 @@ const Home = () => {
     <div className="z-10">
       <div className="flex justify-around pt-20 sm:pt-20 px-10 sm:px-20 ">
         <img className="bg-transparent" src={image} alt="" />
-        <div id="" className="sm:max-w-sm pt-20">
+        <div id="" className="max-w-lg pt-20">
           <div className="text-3xl md:text-4xl">
             Get instant updates about{" "}
             <span className="text-green-500">Bangladesh's</span> weather, Corona
