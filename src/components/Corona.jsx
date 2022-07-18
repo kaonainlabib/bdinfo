@@ -54,19 +54,19 @@ const Corona = () => {
             <ul className="text-2xl p-10">
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Wear a mask
+                Wear a mask everytime you go outside
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Clean your hands
+                Clean your hands whenever you come back home
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Keep a safe distance
+                Keep a safe distance from others
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Stay home if you feel unwell
+                Stay home if you feel ill
               </li>
             </ul>
           </div>
