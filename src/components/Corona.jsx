@@ -66,7 +66,7 @@ const Corona = () => {
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Stay home if you feel ill
+                Stay home if you feel illness
               </li>
             </ul>
           </div>
