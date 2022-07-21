@@ -3,7 +3,7 @@ function Mouse() {
   const mousePosition = useMousePosition();
 
   return (
-    <div className="hidden sm:block">
+    <div className="hidden md:block">
         <div
           className="fixed w-16 h-16 bg-slate-400 rounded-full translate-x-[-50%] translate-y-[-50%] z-10 opacity-10"
           style={{ top: `${JSON.stringify(mousePosition?.y)}px`,

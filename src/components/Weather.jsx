@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import weather from "../assets/undraw_weather_app_re_kcb1.svg";
 import { AiOutlineSearch } from "react-icons/ai";
-import cloudLightning from "../assets/icons8-cloud-lightning-80.png"
 import cloud from "../assets/icons8-cloud-80.png";
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
