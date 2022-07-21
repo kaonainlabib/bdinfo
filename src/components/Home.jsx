@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <div className="z-10">
       <div className="flex justify-around pt-20 sm:pt-20 px-10 sm:px-20 ">
-        <img className="bg-transparent" src={image} alt="" />
+        <img className="bg-transparent" src={image} id="home" alt="" />
         <div id="" className="max-w-lg pt-20">
           <div className="text-3xl md:text-4xl">
             Get instant updates about{" "}
@@ -75,25 +75,27 @@ const Home = () => {
         </NavLink>
       </div>
       <div className="h-[] md:h-screen flex justify-center items-center pb-20 sm:">
-        <div className="card w-96 bg-base-100 shadow-2xl">
-          <figure>
-            <img className="h-[7rem]" src={corona} alt="" />
-          </figure>
-          <div className="card-body text-center text-2xl ">
-            <p className="font-bold">Total cases (BD)</p>
-            <p className="font-bold">{Corona?.data["Total Cases"]}</p>
-            <hr />
-            <p className="font-bold">Recovered</p>
-            <p className="font-bold">{Corona?.data["Total Recovered"]}</p>
-            <hr />
-            <p className="font-bold">Died</p>
-            <p className="font-bold">{Corona?.data["Total Deaths"]}</p>
-            <hr />
-            <p className="font-bold">Last Updated</p>
-            <p className="font-bold">{Corona?.last_update}</p>
-            <hr />
+        <NavLink to="/corona">
+          <div className="card w-96 bg-base-100 shadow-2xl z-10">
+            <figure>
+              <img className="h-[7rem]" src={corona} alt="" />
+            </figure>
+            <div className="card-body text-center text-2xl ">
+              <p className="font-bold">Total cases (BD)</p>
+              <p className="font-bold">{Corona?.data["Total Cases"]}</p>
+              <hr />
+              <p className="font-bold">Recovered</p>
+              <p className="font-bold">{Corona?.data["Total Recovered"]}</p>
+              <hr />
+              <p className="font-bold">Died</p>
+              <p className="font-bold">{Corona?.data["Total Deaths"]}</p>
+              <hr />
+              <p className="font-bold">Last Updated</p>
+              <p className="font-bold">{Corona?.last_update}</p>
+              <hr />
+            </div>
           </div>
-        </div>
+        </NavLink>
       </div>
     </div>
   );
