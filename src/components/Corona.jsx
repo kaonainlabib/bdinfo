@@ -62,7 +62,7 @@ const Corona = () => {
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Keep a safe distance
+                Maintain social istancing 
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
