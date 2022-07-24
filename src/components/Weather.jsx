@@ -6,13 +6,7 @@ const Weather = () => {
   const [input, setInput] = useState("");
   const fetchData = (location) => {
     fetch(
-      `https://foreca-weather.p.rapidapi.com/current/102643743?alt=0&tempunit=C&windunit=MS&tz=Asia%2F${location}&lang=en`, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '0ab0c004d4mshe4c411ed6e0d733p15ee16jsndcb4a5fcffe1',
-          'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com'
-        }
-      }
+      `https://api.weatherapi.com/v1/current.json?key=986b27a9fad74cbeba8113742222207&q=${location}&aqi=no`
     )
       .then((res) => res.json())
       .then((data) => setWeatherData(data));
@@ -34,49 +28,28 @@ const Weather = () => {
           />
             <button type="submit" className="absolute "><AiOutlineSearch className="text-5xl text-gray-600 fill-current cursor-pointer"/></button>
         </form>
-        {weatherData !== null ? (<div className="h-screen flex items-start justify-center flex-col gap-3">
-        <img src={cloud} alt="" className="scale-110 self-center" />
+        {// eslint-disable-next-line eqeqeq
+        weatherData?.location?.country === "Bangladesh" ? (<div className="h-screen flex items-start justify-center flex-col gap-3">
+        <img src={weatherData?.current?.condition?.icon} alt="" className="scale-110 self-center" />
         <div className="text-3xl md:text-4xl">
-          Temperature : {weatherData?.current?.temperature}°C
+          Temperature : {weatherData?.current?.temp_c}°C
         </div>
         <div className="text-3xl md:text-4xl">
-          Feels Like : {weatherData?.current?.feelsLikeTemp}°C
+          Feels Like : {weatherData?.current?.feelslike_c}°C
         </div>
         <div className="text-3xl md:text-4xl">
-          Wind Speed : {weatherData?.current?.windSpeed}m/s {weatherData?.current?.windDirString}
+          Wind Speed : {weatherData?.current?.wind_mph}mph {weatherData?.current?.wind_degree}°{weatherData?.current?.wind_dir}
           </div>
         <div className="text-3xl md:text-4xl">
-          Forecast : {weatherData?.current?.symbolString}
+          Forecast : {weatherData?.current?.condition?.text}
           </div>
-        </div>) : (<div className="h-screen flex items-start justify-center flex-col gap-3">
+          <div className="text-3xl md:text-4xl">
+            Last Updated : {weatherData?.current?.last_updated}
+          </div>
+        </div>) : (<div className="pt-20 flex items-start justify-center flex-col gap-3">
           Not Found
           </div>)}
         
-        {/* {weatherData?.cod === 200 && weatherData?.sys?.country === "BD" ? (
-          <div className="card w-96 bg-base-100 shadow-2xl">
-            <figure>
-              <img className="h-[10rem]" src={weather} alt="" />
-            </figure>
-            <div className="card-body text-center text-2xl ">
-              <p className="font-bold">
-                Today's Weather <br />({weatherData?.name})
-              </p>
-              <hr />
-              <p className="font-bold">
-                {(parseInt(weatherData?.main.temp) - 273.15).toFixed(2)}&deg;{" "}
-                {weatherData?.weather[0]?.main}
-              </p>
-              <hr />
-              <p className="font-bold">Last Updated</p>
-              <p className="font-bold">{new Date().toLocaleTimeString()}</p>
-              <hr />
-            </div>
-          </div>
-        ) : navigator.onLine ? (
-          <>Not found</>
-        ) : (
-          <>No internet connection</>
-        )} */}
       </div>
     </>
   );

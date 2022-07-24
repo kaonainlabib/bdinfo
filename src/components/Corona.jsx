@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import corona from "../assets/coronavirus.png";
 import socialDistancing from "../assets/social-distancing.png";
 import { TiTick } from "react-icons/ti";
+import { VscLoading } from "react-icons/vsc";
 const Corona = () => {
   const [Corona, setCorona] = useState(null);
   const pleaseFetch = () => {
@@ -31,16 +32,36 @@ const Corona = () => {
           </figure>
           <div className="card-body text-center text-2xl ">
             <p className="font-bold">Total cases (BD)</p>
-            <p className="font-bold">{Corona?.data["Total Cases"]}</p>
+            <p className="font-bold">{Corona?.data ? (Corona?.data["Total Cases"]) : (
+              <div className="flex justify-center text-3xl animate-spin text-center">
+
+              <VscLoading />
+              </div>
+            )}</p>
             <hr />
             <p className="font-bold">Recovered</p>
-            <p className="font-bold">{Corona?.data["Total Recovered"]}</p>
+            <p className="font-bold">{Corona?.data ? (Corona?.data["Total Recovered"]) : (
+              <div className="flex justify-center text-3xl animate-spin text-center">
+
+              <VscLoading />
+              </div>
+            )}</p>
             <hr />
             <p className="font-bold">Died</p>
-            <p className="font-bold">{Corona?.data["Total Deaths"]}</p>
+            <p className="font-bold">{Corona?.data ? (Corona?.data["Total Deaths"]) : (
+              <div className="flex justify-center text-3xl animate-spin text-center">
+
+              <VscLoading />
+              </div>
+            )}</p>
             <hr />
             <p className="font-bold">Last Updated</p>
-            <p className="font-bold">{Corona?.last_update}</p>
+            <p className="font-bold">{Corona?.data ? (Corona?.last_update) : (
+              <div className="flex justify-center text-3xl animate-spin text-center">
+
+              <VscLoading />
+              </div>
+            )}</p>
             <hr />
           </div>
         </div>
@@ -54,15 +75,15 @@ const Corona = () => {
             <ul className="text-2xl p-10">
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Wear a mask
+                Wear a mask everytime you go outside
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Clean your hands
+                Clean your hands whenever you come back home
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
-                Maintain social istancing 
+                Keep a safe distance from others
               </li>
               <li className="flex py-2 font-semibold gap-5">
                 <TiTick />
