@@ -26,7 +26,7 @@ const Corona = () => {
   return (
     <>
       <div className="h-screen flex justify-center items-center pt-60">
-        <div className="card w-96 bg-base-100 shadow-2xl">
+        <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl">
           <figure>
             <img className="h-[7rem]" src={corona} alt="" />
           </figure>
@@ -70,30 +70,30 @@ const Corona = () => {
         <div className="flex flex-col-reverse sm:flex-row justify-around">
           <div>
             <p className="text-2xl font-bold">
-              Ways to protect Corona Virus from spreading to your family
+              Ways to protect Corona Virus from spreading to your family:
             </p>
-            <ul className="text-2xl p-10">
+            <ul className="text-xl px-5 py-2">
               <li className="flex py-2 font-semibold gap-5">
-                <TiTick />
+                <div><TiTick className="text-2xl" /></div>
                 Wear a mask everytime you go outside
               </li>
               <li className="flex py-2 font-semibold gap-5">
-                <TiTick />
+                <div><TiTick className="text-2xl" /></div>
                 Clean your hands whenever you come back home
               </li>
               <li className="flex py-2 font-semibold gap-5">
-                <TiTick />
+                <div><TiTick className="text-2xl" /></div>
                 Keep a safe distance from others
               </li>
               <li className="flex py-2 font-semibold gap-5">
-                <TiTick />
+                <div><TiTick className="text-2xl" /></div>
                 Stay home if you feel illness
               </li>
             </ul>
           </div>
           <div className="flex justify-center pb-20 sm:pb-0">
             <img
-              className="h-60 w-60 sm:h-40 md:h-60"
+              className="h-40 sm:h-40 md:h-60"
               src={socialDistancing}
               alt=""
             />

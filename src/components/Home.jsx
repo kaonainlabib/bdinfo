@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import image from "../assets/Fresh_Folk_-_Standing-removebg-preview.png";
+import image from "../assets/gummy-mask.svg";
 import corona from "../assets/icons8-coronavirus-96.png";
 import weather from "../assets/undraw_weather_app_re_kcb1.svg";
 
@@ -15,7 +15,6 @@ const Home = () => {
     )
       .then((res) => res.json())
       .then((data) => setWeatherData(data));
-    console.log(weatherData);
   };
   useEffect(() => {
     fetchData(input);
@@ -41,10 +40,10 @@ const Home = () => {
   }, []);
   return (
     <div className="z-10">
-      <div className="flex justify-around pt-20 sm:pt-20 px-10 sm:px-20 ">
-        <img className="bg-transparent" src={image} id="home" alt="" />
-        <div id="" className="max-w-lg pt-20">
-          <div className="text-3xl md:text-4xl">
+      <div className="flex justify-around pt-20 sm:pt-20 px-5 sm:px-20 ">
+        <img className="bg-transparent h-[8rem] mt-20 mx-0 px-0" src={image} id="home" alt="" />
+        <div id="" className="max-w- sm:max-w-lg pt-20">
+          <div className="text-2xl md:text-4xl">
             Get instant updates about{" "}
             <span className="text-green-500">Bangladesh's</span> weather, Corona
             updates, population and so on...
@@ -53,7 +52,7 @@ const Home = () => {
       </div>
       <div className="h-screen flex justify-center items-center pt-20 flex-col">
         <NavLink to="/weather">
-          <div className="card w-96 bg-base-100 shadow-2xl z-10">
+          <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl z-10">
             <figure>
               <img className="h-[10rem]" src={weather} alt="" />
             </figure>
@@ -76,7 +75,7 @@ const Home = () => {
       </div>
       <div className="h-[] md:h-screen flex justify-center items-center pb-20 sm:">
         <NavLink to="/corona">
-          <div className="card w-96 bg-base-100 shadow-2xl z-10">
+          <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl z-10">
             <figure>
               <img className="h-[7rem]" src={corona} alt="" />
             </figure>

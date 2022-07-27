@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import people from "../assets/undraw_grades_re_j7d6.svg"
+import people from "../assets/undraw_grades_re_j7d6.svg";
+import { VscLoading } from "react-icons/vsc";
 
 const Population = () => {
   const [People, setPeople] = useState(null);
   const pleaseFetch = () => {
     fetch(
-      'https://world-population.p.rapidapi.com/population?country_name=Bangladesh',
+      "https://world-population.p.rapidapi.com/population?country_name=Bangladesh",
       {
         method: "GET",
         headers: {
@@ -21,18 +22,23 @@ const Population = () => {
   useEffect(() => {
     pleaseFetch();
   }, []);
-  console.log(People)
+  console.log(People);
   return (
     <>
       <div className="h-screen flex justify-center items-center">
-        <div className="card w-96 bg-base-100 shadow-2xl">
+        <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl">
           <figure>
             <img src={people} alt="" />
           </figure>
           <div className="card-body text-center text-2xl ">
             <p className="font-bold">Total Population (BD)</p>
-            <p className="font-bold">{People?.body?.population}</p>
-          <hr />
+            <p className="font-bold">{People?.body ? (People?.body?.population) : (
+              <div className="flex justify-center text-3xl animate-spin text-center">
+
+              <VscLoading />
+              </div>
+            )}</p>
+            <hr />
           </div>
         </div>
       </div>
