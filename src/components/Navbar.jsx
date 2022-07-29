@@ -4,7 +4,6 @@ import { TiWeatherCloudy } from "react-icons/ti";
 import { RiVirusLine } from "react-icons/ri";
 import { MdPeopleOutline } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
-
 const Navbar = () => {
   const [first, setfirst] = useState("dark");
   const handleClick = () => {
@@ -27,26 +26,26 @@ const Navbar = () => {
         className=" navbar bg-base-100 fixed left-0 right-0 z-30 shadow-md"
       >
         <div className="flex-1">
-          <NavLink className="btn btn-ghost normal-case text-xl hover:scale-105" to="/#home">
+          <NavLink className="btn btn-ghost normal-case text-xl hover:scale-105" to="/" >
             <span className="text-green-500">BD</span>
             <span className="text-red-600">info</span>
           </NavLink>
         </div>
         <div className="flex-none">
           <ul className="hidden md:flex md:menu md:menu-horizontal md:gap-5">
-            <NavLink to="/weather" className="duration-100 hover:scale-105">
+            <NavLink to="/weather#weather" className="duration-100 hover:scale-105" >
               <button className="btn-info btn gap-2">
                 <TiWeatherCloudy className="text-2xl" />
                 Weather
               </button>
             </NavLink>
-            <NavLink to="/corona" className="duration-100 hover:scale-105">
+            <NavLink to="/corona#corona" className="duration-100 hover:scale-105" >
               <button className="btn-success btn gap-2">
                 <RiVirusLine className="text-2xl" />
                 Corona Updates
               </button>
             </NavLink>
-            <NavLink to="/population" className="duration-100 hover:scale-105">
+            <NavLink to="/population#population" className="duration-100 hover:scale-105" >
               <button className="btn-primary btn btn-warning gap-2">
                 <MdPeopleOutline className="text-2xl" />
                 Population
@@ -87,22 +86,22 @@ const Navbar = () => {
                   }
             }
           >
-              <NavLink to="/corona">
+              <NavLink to="/corona#corona" smooth duration={150}>
             <li onClick={Nav} className="py-6 text-4xl">
               Corona Updates
             </li>
               </NavLink>
-              <NavLink to="/">
+              <NavLink to="/#home" smooth duration={150}>
             <li onClick={Nav} className="py-6 text-4xl">
               Home
             </li>
               </NavLink>
-            <NavLink to="/weather">
+            <NavLink to="/weather#weather" smooth duration={150}>
             <li onClick={Nav} className="py-6 text-4xl">
               Weather
             </li>
             </NavLink>
-            <NavLink to="/population">
+            <NavLink to="/population#population" smooth duration={150}>
             <li onClick={Nav} className="py-6 text-4xl">
               Population
             </li>

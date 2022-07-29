@@ -25,6 +25,7 @@ const Population = () => {
   console.log(People);
   return (
     <>
+      <div className="h-2 w-2 rounded-full" id="population"></div>
       <div className="h-screen flex justify-center items-center">
         <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl">
           <figure>

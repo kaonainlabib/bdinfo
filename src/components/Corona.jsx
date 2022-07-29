@@ -25,6 +25,7 @@ const Corona = () => {
   }, []);
   return (
     <>
+      <div className="h-2 w-2 rounded-full"></div>
       <div className="h-screen flex justify-center items-center pt-60">
         <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl">
           <figure>

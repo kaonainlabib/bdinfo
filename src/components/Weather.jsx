@@ -16,7 +16,8 @@ const Weather = () => {
     fetchData(input);
   };
   return (
-    <>  
+    <>
+      <div className="h-2 w-2 rounded-full" id="weather"></div>
       <div className="h-screen flex justify-center items-center pt-20 flex-col gap-5 z-10">
         <form className="flex z-10" onSubmit={Fdo}>
           <input

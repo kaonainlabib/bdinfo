@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import image from "../assets/gummy-mask.svg";
 import corona from "../assets/icons8-coronavirus-96.png";
 import weather from "../assets/undraw_weather_app_re_kcb1.svg";
-
 const Home = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [input, setInput] = useState("");
@@ -40,10 +39,11 @@ const Home = () => {
   }, []);
   return (
     <div className="z-10">
-      <div className="flex justify-around pt-20 sm:pt-20 px-5 sm:px-20 ">
-        <img className="bg-transparent h-[8rem] mt-20 mx-0 px-0" src={image} id="home" alt="" />
-        <div id="" className="max-w- sm:max-w-lg pt-20">
-          <div className="text-2xl md:text-4xl">
+      <div className="h-2 w-2 rounded-full" id="home"></div>
+      <div className="flex justify-evenly pt-32 sm:pt-40 px-5 sm:px-20 items-center">
+        <img className="bg-transparent h-[8rem] sm:h-[10rem] md:h-[15rem] duration-500" src={image} alt="" />
+        <div id="" className="md:max-w-xl">
+          <div className="text-2xl md:text-3xl lg:text-4xl">
             Get instant updates about{" "}
             <span className="text-green-500">Bangladesh's</span> weather, Corona
             updates, population and so on...
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <div className="h-screen flex justify-center items-center pt-20 flex-col">
-        <NavLink to="/weather">
+        <NavLink to="/weather#weather">
           <div className="card w-[20rem] md:w-96 bg-base-100 shadow-2xl z-10">
             <figure>
               <img className="h-[10rem]" src={weather} alt="" />
