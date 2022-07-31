@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Corona from "./components/Corona";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Loading from "./components/Loading";
 import Mouse from "./components/Mouse";
 import Navbar from "./components/Navbar";
 import Population from "./components/Population";
@@ -19,7 +18,6 @@ root.render(
   <>
     <BrowserRouter>
       <ScrollToTop>
-        <Loading />
         <Mouse />
         <Navbar />
         <Routes>
